@@ -1,0 +1,125 @@
+@use "../abstracts" as *;
+@use "../util/" as u;
+
+.home {
+  background-size: cover;
+  background-image: url("/assets/home_bg.png");
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  .wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include u.breakpoint(medium) {
+      flex-direction: row;
+    }
+  }
+
+  .home-description {
+    color: $secondary;
+    margin-bottom: 5rem;
+
+    @include u.breakpoint(medium) {
+      flex: 1 1 40rem;
+    }
+  }
+  .home-title {
+    background: linear-gradient(to right, #38d39f, #00565e);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-size: $text-xl;
+
+    @include u.breakpoint(medium) {
+      font-size: $text-xxl;
+      text-align: left;
+    }
+  }
+
+  .home-text {
+    font-size: $text-m;
+
+    @include u.breakpoint(medium) {
+      font-size: $text-l;
+    }
+  }
+
+  .home-svg {
+    width: 100%;
+    max-width: 40rem;
+    height: auto;
+
+    @include u.breakpoint(medium) {
+      width: 100%;
+      flex: 1 1 40rem;
+      max-width: none;
+    }
+  }
+
+  .home-hex {
+    display: none;
+    @include u.breakpoint(medium) {
+      width: 40%;
+      max-width: 63rem;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -15rem;
+      z-index: -999;
+    }
+  }
+}
+
+// Animations
+
+#plant-left {
+  animation: plant 1.5s ease infinite alternate;
+}
+
+#plant-right {
+  animation: plant 1.5s ease infinite alternate 0.5s;
+}
+
+#me {
+  animation: me 1.25s ease-in-out infinite alternate;
+  transform-origin: bottom;
+}
+
+#clock-arrow {
+  animation: clock 1.5s linear infinite;
+  transform-box: fill-box;
+  transform-origin: bottom;
+}
+
+@keyframes plant {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(-30%);
+  }
+}
+
+@keyframes me {
+  from {
+    transform: rotateZ(-5deg);
+  }
+
+  to {
+    transform: rotateZ(5deg);
+  }
+}
+
+@keyframes clock {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}

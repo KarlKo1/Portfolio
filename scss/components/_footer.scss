@@ -1,0 +1,54 @@
+@use "../abstracts" as *;
+@use "../util/" as u;
+
+footer {
+  text-align: right;
+  padding: 1rem;
+
+  @include u.breakpoint(xlarge) {
+    margin-top: 10rem;
+  }
+
+  a {
+    color: $secondary;
+    font-size: 2rem;
+    transition: $transition;
+    &:hover {
+      color: $third;
+    }
+  }
+
+  .footer-socials {
+    svg {
+      width: 4%;
+      min-width: 3rem;
+      margin-left: 1rem;
+
+      .hexagon {
+        transition: $transition;
+
+        &:hover {
+          fill: #38d39f;
+          transition: $transition;
+        }
+
+        &:hover + text {
+          fill: white;
+          transition: $transition;
+        }
+      }
+
+      text {
+        transition: $transition;
+        font-family: FontAwesome;
+        font-size: 17.5rem;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 1.15rem;
+    color: $secondary;
+  }
+}

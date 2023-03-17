@@ -1,0 +1,168 @@
+@use "../abstracts/" as *;
+@use "../util" as u;
+
+// Animation
+$transition: all 250ms ease-in-out;
+
+//Mobile
+.primary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+  z-index: 999;
+  position: fixed;
+  height: 10vh;
+  top: 0;
+  width: 100%;
+  background: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  h1 {
+    color: $secondary;
+  }
+  .logo {
+    max-width: 25%;
+    width: 25%;
+    height: auto;
+  }
+}
+
+.primary-navigation {
+  display: flex;
+  gap: 5rem;
+
+  li {
+    color: $secondary;
+    font-size: 1.5rem;
+  }
+
+  li,
+  a {
+    // Opacity will flicker so use color instead
+    color: #00565e8a;
+    transition: $transition;
+
+    &.active {
+      a {
+        color: $secondary;
+        text-decoration: underline;
+        text-decoration-color: $secondary;
+        text-decoration-thickness: 0.2rem;
+        text-underline-offset: 0.5rem;
+      }
+    }
+
+    &:hover {
+      color: $secondary;
+    }
+  }
+}
+
+.mobile-nav-toggle,
+.nav-contact {
+  display: none;
+}
+
+//Media queries
+
+@include u.breakpoint(xsmall) {
+  .primary-header {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 38.75em) {
+  .primary-navigation {
+    inset: 0 0 0 30%;
+    position: fixed;
+    flex-direction: column;
+    padding: min(30vh, 15rem) 4rem;
+    transform: translateX(100%);
+    transition: $transition;
+    background: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    .nav-contact {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 30%;
+      gap: 1.5rem;
+
+      .nav-contact-title {
+        color: #00565e41;
+        letter-spacing: 0.25rem;
+        text-align: center;
+      }
+
+      .nav-email {
+        color: $secondary;
+        text-transform: lowercase;
+        text-align: center;
+      }
+
+      .nav-contact-social {
+        display: flex;
+        justify-content: space-around;
+
+        a {
+          font-size: 2rem;
+          color: $secondary;
+        }
+      }
+    }
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .mobile-nav-toggle {
+    position: relative;
+    z-index: 9999;
+    cursor: pointer;
+    display: block;
+    transition: $transition;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    .line {
+      background: $secondary;
+      border-radius: 5px;
+      height: 0.2rem;
+      margin: 0.4rem;
+      pointer-events: none;
+      width: 3rem;
+      transition: $transition;
+    }
+
+    .line1,
+    .line3 {
+      width: 1.5rem;
+    }
+
+    .line3 {
+      margin-left: 50%;
+    }
+  }
+
+  .mobile-nav-toggle[aria-expanded="true"] {
+    .line1 {
+      transform: rotate(45deg) translate(2.5px, -1px);
+      transition: $transition;
+    }
+
+    .line2 {
+      transform: rotate(-45deg);
+      transition: $transition;
+    }
+
+    .line3 {
+      transform: rotate(45deg) translate(-2.5px, 1.5px);
+      transition: $transition;
+    }
+  }
+}

@@ -1,0 +1,209 @@
+@use "../abstracts" as *;
+@use "../util/" as u;
+
+.about {
+  background-size: auto;
+  position: relative;
+  background-image: url("/assets/about_bg.png");
+  background-repeat: no-repeat;
+
+  .about-title-container {
+    position: relative;
+
+    .about-title {
+      color: $secondary;
+    }
+
+    .about-title-img {
+      position: absolute;
+      width: 30%;
+      height: auto;
+      max-width: 35rem;
+      left: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin-right: 0;
+
+      @include u.breakpoint(large) {
+        filter: drop-shadow(50px -50px $third);
+      }
+
+      @media (max-width: 350px) {
+        margin-top: 0;
+      }
+
+      @include u.breakpoint(xsmall) {
+        padding-top: 10%;
+      }
+    }
+  }
+
+  .about-secondary-title {
+    color: $secondary;
+    font-size: $text-l;
+    max-width: 70%;
+
+    @media (max-width: 350px) {
+      font-size: clamp(0.75rem, 1vw + 1rem, 4rem);
+    }
+  }
+
+  .about-text {
+    font-size: $text-m;
+    line-height: 3rem;
+    color: $secondary;
+    margin-top: 1.25rem;
+    max-width: 70rem;
+
+    @media (max-width: 350px) {
+      font-size: $text-xs;
+    }
+
+    @media (max-width: 375px) {
+      line-height: normal;
+    }
+
+    @include u.breakpoint(xlarge) {
+      line-height: 4.5rem;
+    }
+  }
+
+  .about-text,
+  .about-tab-titles,
+  .about-tab-contents {
+    @include u.breakpoint(xsmall) {
+      width: auto;
+      max-width: 65%;
+    }
+
+    @include u.breakpoint(xlarge) {
+      width: auto;
+      max-width: 55%;
+    }
+  }
+
+  .about-tab-titles {
+    margin: 2rem 0;
+    display: flex;
+  }
+
+  .about-tab-links {
+    color: $secondary;
+    margin-right: 5rem;
+    font-size: $text-m;
+    cursor: pointer;
+    position: relative;
+    font-weight: 600;
+
+    &::after {
+      content: "";
+      width: 0;
+      height: 3px;
+      background: $secondary;
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      transition: $transition;
+    }
+
+    &.active-link {
+      &::after {
+        width: 50%;
+      }
+    }
+  }
+
+  .about-tab-contents {
+    display: none;
+
+    ul li {
+      margin: 1.5rem 0rem;
+      color: $secondary;
+      font-size: 1.2rem;
+
+      @media (max-width: 350px) {
+        font-size: $text-xs;
+      }
+
+      @media (max-width: 375px) {
+        margin: 1.05rem 0rem;
+      }
+
+      @include u.breakpoint(medium) {
+        color: $secondary;
+        font-size: 1.5rem;
+      }
+    }
+
+    &.active-tab {
+      display: block;
+
+      p {
+        color: $secondary;
+        font-size: $text-xs;
+
+        @include u.breakpoint(tiny) {
+          font-size: $text-s;
+        }
+      }
+    }
+  }
+
+  #achievements {
+    ul {
+      margin-top: 2rem;
+    }
+  }
+
+  .experience {
+    padding-top: 1rem;
+
+    .parent {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(7rem, 4fr));
+      gap: 1.25rem;
+      text-align: center;
+      align-items: center;
+      margin: 1rem 0;
+      @media (max-width: 375px) {
+        gap: 0.75rem;
+      }
+
+      @include u.breakpoint(xsmall) {
+        grid-template-columns: repeat(6, 1fr);
+      }
+
+      a {
+        text-decoration: none;
+        color: $secondary;
+        background: #fff;
+      }
+    }
+
+    .box {
+      transition: $transition;
+      font-family: $font-poppins;
+
+      @media (max-width: 375px) {
+        font-size: 0.75rem;
+      }
+
+      @include u.breakpoint(small) {
+        padding: 0.3rem;
+      }
+
+      &:hover,
+      &:active {
+        color: $secondary;
+        background: $third;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  #experience,
+  #achievements {
+    height: 10rem;
+  }
+}
