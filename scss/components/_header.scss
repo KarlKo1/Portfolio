@@ -65,7 +65,6 @@ $transition: all 250ms ease-in-out;
 }
 
 //Media queries
-
 @include u.breakpoint(xsmall) {
   .primary-header {
     justify-content: space-around;

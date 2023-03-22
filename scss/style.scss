@@ -66,10 +66,6 @@ textarea {
   border: 0;
 }
 
-// .section {
-//   padding-top: 10vh;
-// }
-
 .inner-wrapper {
   width: 80%;
   margin: auto;
@@ -78,21 +74,11 @@ textarea {
   }
 }
 
-// .inner-wrapper {
-//   .home & {
-//     height: 100%;
-//   }
-//   width: 80%;
-//   margin: auto;
-//   @include u.breakpoint(small) {
-//     width: 60%;
-//   }
-// }
-
 .title {
   font-weight: 600;
   font-size: $text-xl;
 }
+
 .btn {
   cursor: pointer;
   color: $secondary;
@@ -205,7 +191,8 @@ textarea {
     }
   }
 }
-//
+
+
 //Fullpage styling
 .fp-overflow {
   max-height: fit-content;
