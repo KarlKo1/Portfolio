@@ -41,32 +41,38 @@
           ><img src="/assets/logo.png" class="logo" alt="logo"
         /></a>
       </div>
-      <button aria-controls="primary-navigation" aria-expanded="false">
+      <div
+        role="navigation"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
         <span class="sr-only">Menu</span>
         <div class="mobile-nav-toggle">
           <div class="line line1"></div>
           <div class="line line2"></div>
           <div class="line line3"></div>
         </div>
-      </button>
+      </div>
       <nav>
-        <ul
+        <div
           id="primary-navigation"
           class="primary-navigation"
           data-visible="false"
         >
-          <li data-menuanchor="home" class="nav-links">
-            <a href="#home">Home</a>
-          </li>
-          <li data-menuanchor="about" class="nav-links">
-            <a href="#about">About</a>
-          </li>
-          <li data-menuanchor="works" class="nav-links">
-            <a href="#works">Works</a>
-          </li>
-          <li data-menuanchor="contact" class="nav-links">
-            <a href="#contact">Contact</a>
-          </li>
+          <ul>
+            <li data-menuanchor="home" class="nav-links">
+              <a href="#home">Home</a>
+            </li>
+            <li data-menuanchor="about" class="nav-links">
+              <a href="#about">About</a>
+            </li>
+            <li data-menuanchor="works" class="nav-links">
+              <a href="#works">Works</a>
+            </li>
+            <li data-menuanchor="contact" class="nav-links">
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
           <div class="nav-contact">
             <h2 class="nav-contact-title">CHAT WITH ME</h2>
             <a href="mailto:karlaugustkk@hotmail.com"
@@ -82,7 +88,7 @@
               <a href="assets/my_cv.pdf" target="_blank">cv</a>
             </div>
           </div>
-        </ul>
+        </div>
       </nav>
     </header>
     <div id="fullpage">
@@ -314,7 +320,6 @@
             </svg>
           </div>
         </div>
-        <img src="assets/hex_filled.svg" class="home-hex" alt="hexagon" />
       </div>
 
       <!-- ABOUT -->
@@ -827,9 +832,6 @@
                     stroke="#00565e"
                     stroke-width="50"
                     fill="white"
-                    height="100%"
-                    width="100%"
-                    preserveAspectRatio="xMidYMin slice"
                   ></polygon>
                   <text
                     x="50%"

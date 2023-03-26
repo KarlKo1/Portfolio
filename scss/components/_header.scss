@@ -31,6 +31,14 @@ $transition: all 250ms ease-in-out;
 .primary-navigation {
   display: flex;
   gap: 5rem;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    @include u.breakpoint(xsmall) {
+      flex-direction: row;
+    }
+  }
 
   li {
     color: $secondary;

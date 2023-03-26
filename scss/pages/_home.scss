@@ -58,19 +58,6 @@
       max-width: none;
     }
   }
-
-  .home-hex {
-    display: none;
-    @include u.breakpoint(medium) {
-      width: 40%;
-      max-width: 63rem;
-      display: block;
-      position: absolute;
-      top: 0;
-      right: -15rem;
-      z-index: -999;
-    }
-  }
 }
 
 // Animations
