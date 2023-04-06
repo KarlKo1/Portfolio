@@ -118,7 +118,6 @@ textarea {
     height: 1px;
     background: $primary;
     width: 30%;
-    right: 23px;
     top: 50%;
     transform: scaleX(0.25);
     transform-origin: center right;
@@ -164,10 +163,7 @@ textarea {
     }
     em {
       background: $secondary;
-      transform: scaleX(0.8);
-      .showcase-links & {
-        transform: scaleX(0.6);
-      }
+      transform: scaleX(0.6);
     }
   }
 }
