@@ -55,4 +55,5 @@ new fullpage("#fullpage", {
   scrollOverflow: true,
   sectionsColor: ["#edf6f9", "#edf6f9", "#00565e", "#edf6f9"],
   menu: "#primary-navigation",
+  licenseKey: "TDL48-LA216-6I95I-FK6WI-KRKNO",
 });

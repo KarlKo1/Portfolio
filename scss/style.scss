@@ -188,14 +188,13 @@ textarea {
   }
 }
 
-//Fullpage styling
-.fp-overflow {
-  max-height: fit-content;
-  .works & {
-    @include u.breakpoint(large) {
-      max-height: fit-content;
-    }
-  }
+// Fullpage styling
+.fp-scrollable .fp-section {
+  height: 100vh !important;
+}
+
+.fp-overflow.fp-table {
+  display: inline-flex;
 }
 
 #fp-nav.fp-right {

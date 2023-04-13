@@ -48,7 +48,7 @@ $transition: all 250ms ease-in-out;
   li,
   a {
     // Opacity will flicker so use color instead
-    color: #00565e8a;
+    color: #00565ee5;
     transition: $transition;
 
     &.active {
