@@ -32,7 +32,7 @@
 
   .works-text {
     color: $primary;
-    font-size: $text-s;
+    font-size: $text-m;
 
     @include u.breakpoint(medium) {
       max-width: 75%;
@@ -71,8 +71,11 @@
       flex: 1 5 auto;
 
       .showcase-title {
-        margin-bottom: 1rem;
+        margin: 1rem 0 1rem 0;
         font-size: $text-m;
+        @include u.breakpoint(medium) {
+          margin: 0;
+        }
       }
 
       .showcase-desc {
@@ -82,9 +85,34 @@
       .showcase-links {
         display: flex;
         align-items: center;
-        gap: 2rem;
+        gap: 6rem;
         margin-top: 1rem;
+        position: relative;
       }
     }
+  }
+
+  .warning {
+    position: absolute;
+    top: 5rem;
+    right: 20%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    .warning-text {
+      color: #ddbd10;
+      font-size: $text-xs;
+      line-height: normal;
+      font-weight: bold;
+    }
+  }
+
+  .showcase-warning-icon {
+    position: absolute;
+    top: -2.5rem;
+    left: 12rem;
+    z-index: 999;
+    pointer-events: none;
+    rotate: 10deg;
   }
 }
