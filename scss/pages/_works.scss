@@ -85,34 +85,10 @@
       .showcase-links {
         display: flex;
         align-items: center;
-        gap: 6rem;
+        gap: 2rem;
         margin-top: 1rem;
         position: relative;
       }
     }
-  }
-
-  .warning {
-    position: absolute;
-    top: 5rem;
-    right: 20%;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    .warning-text {
-      color: #ddbd10;
-      font-size: $text-xs;
-      line-height: normal;
-      font-weight: bold;
-    }
-  }
-
-  .showcase-warning-icon {
-    position: absolute;
-    top: -2.5rem;
-    left: 12rem;
-    z-index: 999;
-    pointer-events: none;
-    rotate: 10deg;
   }
 }
