@@ -91,4 +91,36 @@
       }
     }
   }
+  .showcase-img .svg-graphic {
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+  }
+
+  .showcase-img.flip .svg-graphic {
+    transform: rotateY(180deg);
+  }
+
+  .showcase-img.flip .svg-graphic a {
+    animation: fade-in 0.5s;
+    animation-fill-mode: both;
+  }
+
+  .showcase-img.flip .svg-graphic image {
+    animation: fade-in 0.5s;
+    animation-fill-mode: both;
+  }
+
+  .showcase-img.flip .svg-graphic image:hover {
+    animation: fade-in 0.5s;
+    animation-fill-mode: both;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }

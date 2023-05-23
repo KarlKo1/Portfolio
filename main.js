@@ -57,3 +57,36 @@ new fullpage("#fullpage", {
   menu: "#primary-navigation",
   licenseKey: "TDL48-LA216-6I95I-FK6WI-KRKNO",
 });
+
+const showcaseImages = Array.from(document.querySelectorAll(".showcase-img"));
+
+showcaseImages.forEach((image) => {
+  const hoverImageURL = image.getAttribute("data-hover");
+  const imgElement = image.querySelector("image");
+  const originalImageURL = imgElement.getAttributeNS(
+    "http://www.w3.org/1999/xlink",
+    "href"
+  );
+
+  // Preload the hover image
+  const hoverImage = new Image();
+  hoverImage.src = hoverImageURL;
+
+  image.addEventListener("mouseenter", () => {
+    imgElement.setAttributeNS(
+      "http://www.w3.org/1999/xlink",
+      "href",
+      hoverImageURL
+    );
+    image.classList.add("flip");
+  });
+
+  image.addEventListener("mouseleave", () => {
+    imgElement.setAttributeNS(
+      "http://www.w3.org/1999/xlink",
+      "href",
+      originalImageURL
+    );
+    image.classList.remove("flip");
+  });
+});
