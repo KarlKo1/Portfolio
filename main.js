@@ -90,3 +90,12 @@ showcaseImages.forEach((image) => {
     image.classList.remove("flip");
   });
 });
+
+function revealOnLoad() {
+  let elements = document.querySelectorAll(".reveal");
+  elements.forEach(function (element) {
+    element.classList.add("reveal-loaded");
+  });
+}
+
+window.addEventListener("load", revealOnLoad);
