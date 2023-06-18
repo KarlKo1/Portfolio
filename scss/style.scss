@@ -26,6 +26,11 @@ body {
   font-family: $font-poppins;
 }
 
+html,
+body {
+  overflow-x: hidden !important;
+}
+
 a {
   text-decoration: none;
   list-style: none;
