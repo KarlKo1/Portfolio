@@ -81,6 +81,7 @@ $transition: all 250ms ease-in-out;
 
 @media (max-width: 38.75em) {
   .primary-navigation {
+    height: 100vh;
     inset: 0 0 0 30%;
     position: fixed;
     flex-direction: column;
